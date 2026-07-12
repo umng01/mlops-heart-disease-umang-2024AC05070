@@ -1,0 +1,40 @@
+{
+    "best_model": "Logistic Regression",
+    "best_test_roc_auc": 0.9577922077922079,
+    "best_run_id": "29d25e8cb98344bcb5535b501395e272",
+    "training_date": "2026-07-10",
+    "author": "Umang Sharma",
+    "roll_no": "2024AC05070",
+    "all_models": [
+        {
+            "Model": "Logistic Regression",
+            "Test Accuracy": 0.8688524590163934,
+            "Test Precision": 0.8125,
+            "Test Recall": 0.9285714285714286,
+            "Test F1": 0.8666666666666666,
+            "Test ROC-AUC": 0.9577922077922079,
+            "CV Accuracy Mean": 0.8263605442176871,
+            "CV Accuracy Std": 0.02821361425025097
+        },
+        {
+            "Model": "Random Forest",
+            "Test Accuracy": 0.8852459016393442,
+            "Test Precision": 0.8387096774193549,
+            "Test Recall": 0.9285714285714286,
+            "Test F1": 0.8813559322033899,
+            "Test ROC-AUC": 0.9577922077922079,
+            "CV Accuracy Mean": 0.8139455782312925,
+            "CV Accuracy Std": 0.019460717227710093
+        },
+        {
+            "Model": "XGBoost",
+            "Test Accuracy": 0.8688524590163934,
+            "Test Precision": 0.8333333333333334,
+            "Test Recall": 0.8928571428571429,
+            "Test F1": 0.8620689655172413,
+            "Test ROC-AUC": 0.9415584415584415,
+            "CV Accuracy Mean": 0.8345238095238094,
+            "CV Accuracy Std": 0.03263955042194909
+        }
+    ]
+}

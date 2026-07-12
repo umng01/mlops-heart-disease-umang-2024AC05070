@@ -1,0 +1,140 @@
+#!/bin/bash
+
+# MLOps Assignment - Quick Start Script
+# Student: Umang Sharma (2024AC05070)
+
+echo "╔══════════════════════════════════════════════════════════╗"
+echo "║     MLOps Assignment - Setup & Execution Guide          ║"
+echo "╚══════════════════════════════════════════════════════════╝"
+echo ""
+
+# Color codes
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+echo -e "${BLUE}Current directory: $(pwd)${NC}"
+echo ""
+
+# Step 1: Create virtual environment
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${YELLOW}STEP 1: Creating Virtual Environment${NC}"
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+
+if [ ! -d "venv" ]; then
+    echo "Creating virtual environment..."
+    python3 -m venv venv
+    echo -e "${GREEN}✓ Virtual environment created${NC}"
+else
+    echo -e "${GREEN}✓ Virtual environment already exists${NC}"
+fi
+
+echo ""
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${YELLOW}STEP 2: Activate Environment & Install Dependencies${NC}"
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+echo "Run these commands manually:"
+echo ""
+echo -e "${GREEN}  source venv/bin/activate${NC}"
+echo -e "${GREEN}  pip install --upgrade pip${NC}"
+echo -e "${GREEN}  pip install -r requirements.txt${NC}"
+echo ""
+echo "This will install all required packages including Jupyter!"
+echo ""
+
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${YELLOW}STEP 3: Download Dataset${NC}"
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+echo "After activating venv and installing dependencies, run:"
+echo ""
+echo -e "${GREEN}  python src/data/download_data.py${NC}"
+echo ""
+
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${YELLOW}STEP 4: Run Jupyter Notebooks${NC}"
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+echo "Start Jupyter:"
+echo ""
+echo -e "${GREEN}  jupyter notebook${NC}"
+echo ""
+echo "Then run these notebooks IN ORDER:"
+echo "  1. notebooks/01_eda_preprocessing.ipynb"
+echo "  2. notebooks/02_model_training.ipynb"
+echo ""
+echo "📸 TAKE SCREENSHOTS of all visualizations!"
+echo ""
+
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${YELLOW}STEP 5: View MLflow Experiments${NC}"
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+echo "After training models, view experiments:"
+echo ""
+echo -e "${GREEN}  mlflow ui${NC}"
+echo ""
+echo "Open: http://localhost:5000"
+echo "📸 TAKE SCREENSHOTS of experiment tracking!"
+echo ""
+
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${YELLOW}STEP 6: Test API Locally${NC}"
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+echo "Start API server:"
+echo ""
+echo -e "${GREEN}  uvicorn src.api.app:app --reload${NC}"
+echo ""
+echo "Test in browser: http://localhost:8000/docs"
+echo "📸 TAKE SCREENSHOTS of Swagger UI!"
+echo ""
+
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${YELLOW}STEP 7: Run Tests${NC}"
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+echo "Run all tests:"
+echo ""
+echo -e "${GREEN}  pytest tests/ -v${NC}"
+echo ""
+echo "With coverage:"
+echo ""
+echo -e "${GREEN}  pytest tests/ --cov=src --cov-report=html${NC}"
+echo ""
+
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${YELLOW}OPTIONAL: Docker (if installed)${NC}"
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+echo "If Docker is installed:"
+echo ""
+echo -e "${GREEN}  docker build -t heart-disease-api .${NC}"
+echo -e "${GREEN}  docker run -p 8000:8000 heart-disease-api${NC}"
+echo ""
+echo "If NOT installed, skip and mention in report!"
+echo ""
+
+echo "╔══════════════════════════════════════════════════════════╗"
+echo "║                    SUMMARY                               ║"
+echo "╚══════════════════════════════════════════════════════════╝"
+echo ""
+echo "MUST DO (in order):"
+echo "  1. Activate venv & install dependencies"
+echo "  2. Download dataset"
+echo "  3. Run both Jupyter notebooks"
+echo "  4. View MLflow UI"
+echo "  5. Test API locally"
+echo "  6. Run pytest"
+echo "  7. Take screenshots of everything!"
+echo ""
+echo "AFTER THAT:"
+echo "  - Create GitHub repository"
+echo "  - Write 10-page report"
+echo "  - Record demo video"
+echo ""
+echo "Good luck! 🚀"
+echo ""

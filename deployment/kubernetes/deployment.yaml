@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heart-disease-prediction
+  labels:
+    app: heart-disease-prediction
+    component: api
+    environment: production
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: heart-disease-prediction
+  template:
+    metadata:
+      labels:
+        app: heart-disease-prediction
+        component: api
+        environment: production
+    spec:
+      containers:
+      - name: heart-disease-api
+        image: heart-disease-prediction:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 250m
+            memory: 256Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+            scheme: HTTP
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          successThreshold: 1
+          failureThreshold: 3
+        env:
+        - name: PORT
+          value: "8000"
+        - name: ENVIRONMENT
+          value: "production"
