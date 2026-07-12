@@ -10,6 +10,21 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.103.1-green.svg)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
 
+---
+
+## 📦 **Assignment Deliverables**
+
+| Item | Location | Link |
+|------|----------|------|
+| 📄 **Report (PDF)** | `reports/MLOps_Assignment_Report_Umang_Sharma.pdf` | [Download PDF](reports/MLOps_Assignment_Report_Umang_Sharma.pdf) |
+| 📝 **Report (Markdown)** | `reports/MLOps_Assignment_Report_Umang_Sharma.md` | [View Report](reports/MLOps_Assignment_Report_Umang_Sharma.md) |
+| 🎥 **Video Demo** | Desktop (451MB - too large for GitHub) | Upload to YouTube/Google Drive |
+| 💻 **Source Code** | Entire repository | [GitHub Repo](https://github.com/umng01/mlops-heart-disease-umang-2024AC05070) |
+
+**Note**: Video file (MLOPS.mov - 451MB) is located at `~/Desktop/MLOPS.mov` and needs to be uploaded to YouTube (unlisted) or Google Drive separately due to GitHub's 100MB file size limit.
+
+---
+
 ## 🎯 Project Overview
 
 Complete end-to-end MLOps pipeline for heart disease prediction using UCI Heart Disease dataset. This project demonstrates industry-standard ML engineering practices including experiment tracking, model deployment, containerization, and monitoring.
